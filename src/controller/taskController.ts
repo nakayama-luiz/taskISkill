@@ -12,14 +12,17 @@ export class TaskControlller{
     async findTaskById(req: Request, res: Response){
         return res.json(await taskRepository.findOneBy({id: parseInt(req.params.id)}))
     }
+    
+    async findMany(){
+        return await taskRepository.find()
+    }
 
-    async findTaskByUser(req: Request, res: Response){
 
-        const userId = parseInt(req.params.id);
- 
-        const task = await taskRepository.find({where: {user: Equal(userId)}})  
+    async findTaskByUser(req: any){
+        // const userId = parseInt(req.params.id);
+        const task = await taskRepository.find({where: {user: Equal(req)}})  
         
-        return res.json(task)
+        return (task)
     }
 
     async delete(req: Request, res: Response){

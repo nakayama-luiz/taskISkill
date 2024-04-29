@@ -36,7 +36,6 @@ export class userController {
 
     async findTaskByUser(req: Request, res: Response){
         const userId = parseInt(req.params.id);
- 
         const task = await taskRepository.find({where: {user: Equal(userId)}})  
         
         return res.json(task)

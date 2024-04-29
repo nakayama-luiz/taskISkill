@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm"
 import { User } from "./User"
+import { Categoria } from "./Categoria";
 
 type TaskStatus = 'pendente' | 'em andamento' | 'concluída';
 
@@ -26,5 +27,9 @@ export class Tasks {
     
     @Column({ default: 'pendente' })
     Status: TaskStatus
+
+    @ManyToOne(() => Categoria, categoria => categoria.id, { nullable: true } )
+    @JoinColumn({name:'categoria_id'})//opcional //TALVEZ tenha que ligar com categoria
+    categoria:Categoria
 
 }

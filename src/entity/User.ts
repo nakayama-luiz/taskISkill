@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import { Tasks } from "./Tasks"
+import { Categoria } from "./Categoria"
 
 @Entity()
 export class User {
@@ -18,6 +19,9 @@ export class User {
   
     @OneToMany(()=> Tasks, (task)=> task.user, {nullable:true})
     tasks: Tasks[]
+
+    @OneToMany(()=> Categoria, categoria => categoria.User)
+    categorias:Categoria[]
 
 
 }
