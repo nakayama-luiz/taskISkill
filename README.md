@@ -1,7 +1,8 @@
 # Awesome Project Build with TypeORM
 
-Steps to run this project:
+Projeto realizado para a aula de PROGRAMAÇÃO III
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+Trabalho realizado por:
+
+Luiz Eduardo Nakayama dos Santos. RA: 22139419-2
+MARCELO NORITA SCARPARO - RA: 22185044-2
